@@ -1,2 +1,2 @@
 # ejs-challenge
-EJS-challenge, creating a blog website
+EJS-challenge, creating a blog website.
