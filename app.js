@@ -13,6 +13,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+/* A variable posts consists of post objects with keys: title and content:
+    const post = {
+    title: req.body.postTitle, 
+    content: req.body.postContent,
+  }; */
+
 let posts = [];
 
 app.get("/", function (req, res) {
@@ -43,8 +49,18 @@ app.post("/compose", function (req, res) {
 });
 
 app.get("/posts/:postName", function(req, res) {
-  console.log(req.params.postName);
-})
+  const requestedTitle = req.params.postName;
+
+  posts.forEach(function(post) {
+    const storedTitle = post.title;
+
+    if (storedTitle === requestedTitle) {
+      console.log("Match Found!");
+    } else {
+      console.log("Not a match!");
+    }
+  });
+  });
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
