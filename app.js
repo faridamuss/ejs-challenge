@@ -51,6 +51,7 @@ const createdPost3 = new Post ({
 
 const defaultPosts = [createdPost1, createdPost2, createdPost3];
 
+// insert documents into local db: 
 Post.insertMany(defaultPosts, function (err) {
   if (!err) {
     console.log("Successfully added to the db")
