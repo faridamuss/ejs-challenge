@@ -28,7 +28,28 @@ async function main() {
 const postSchema = {
   title: String, 
   content: String
-}
+};
+
+// create a MODEL
+const Post = mongoose.model("Post", postSchema);
+
+// create a DOCUMENT
+const createdPost1 = new Post ({
+  name: "Day1",
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+});
+
+// populate our database
+const createdPost2 = new Post ({
+  name: "Day2",
+  content: "Ullamcorper a lacus vestibulum sed. Enim blandit volutpat maecenas volutpat blandit. In cursus turpis massa tincidunt dui ut. Pellentesque habitant morbi tristique senectus et. Turpis tincidunt id aliquet risus feugiat in. Eu volutpat odio facilisis mauris sit amet massa. Senectus et netus et malesuada fames ac. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Amet purus gravida quis blandit turpis cursus in. Sapien et ligula ullamcorper malesuada. Leo duis ut diam quam nulla porttitor. Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Blandit aliquam etiam erat velit scelerisque in dictum non. In hendrerit gravida rutrum quisque non. Maecenas sed enim ut sem viverra aliquet."
+});
+
+const createdPost3 = new Post ({
+  name: "Day3",
+  content: "Fermentum et sollicitudin ac orci. Tortor at risus viverra adipiscing. Ut eu sem integer vitae justo eget magna fermentum. Nec ultrices dui sapien eget mi proin sed libero. Fringilla est ullamcorper eget nulla facilisi. Porta nibh venenatis cras sed felis eget velit. Volutpat est velit egestas dui id ornare arcu odio. Elit sed vulputate mi sit amet mauris commodo. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Orci nulla pellentesque dignissim enim sit. Tellus cras adipiscing enim eu. Dui sapien eget mi proin sed libero enim sed faucibus. Consequat id porta nibh venenatis cras. Iaculis nunc sed augue lacus viverra vitae congue eu. Mauris ultrices eros in cursus. Id velit ut tortor pretium viverra suspendisse potenti nullam. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Magna sit amet purus gravida quis blandit turpis cursus in. Ac tincidunt vitae semper quis lectus nulla at volutpat diam. Faucibus interdum posuere lorem ipsum dolor sit."
+});
+
 
 
 let posts = [];
